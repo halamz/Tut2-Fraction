@@ -23,8 +23,17 @@ public:
 	~Fraction();
 
 };
+//constructor
+Fraction::Fraction()
+{
 
+}
 
+//deconstructor
+Fraction::Fraction()
+{
+
+}
 int main()
 {
 	Fraction frac;
