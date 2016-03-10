@@ -22,6 +22,7 @@ public:
 	void divide(Fraction);
 	void setValues(int num,int den); //to set n = num and d= den
 	void getValues(int &num, int &den); //to get n and d
+	void print();
 	~Fraction();
 
 };
@@ -76,8 +77,13 @@ void Fraction::divide(Fraction fract)
 	n = n*den;//changes the value stored in n(numerator)
 	d = d*num;//changes the value stored in d(denominator)
 }
+
+void Fraction::print()
+{
+	cout << n << "/" << d << endl;
+}
 //deconstructor
-Fraction::Fraction()
+Fraction::~Fraction()
 {
 
 }
@@ -85,6 +91,24 @@ Fraction::Fraction()
 int main()
 {
 	Fraction obj1,obj2; //creates objects of fraction
+	obj1.setValues(1, 2);
+	obj2.setValues(1, 4);
+
+	//Testing
+	obj1.add(obj2);
+	obj1.print();
+
+	obj1.setValues(1, 2);
+	obj1.subtract(obj2);
+	obj1.print();
+
+	obj1.setValues(1, 2);
+	obj1.multiply(obj2);
+	obj1.print();
+
+	obj1.setValues(1, 2);
+	obj1.divide(obj2);
+	obj1.print();
 
 	//
 	
