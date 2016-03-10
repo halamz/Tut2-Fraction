@@ -43,14 +43,49 @@ void Fraction::getValues(int &num, int &den)
 	den = d;
 }
 
+void Fraction::add(Fraction fract)
+{
+	int num, den;
+	fract.getValues(num, den);// Gets the values store in the object fract
+	n = n*den + num*d; //changes the value stored in n(numerator)
+	d = den*d; //changes the value stored in d(denominator)
+}
 
+void Fraction::subtract(Fraction fract)
+{
+	int num, den;
+	fract.getValues(num, den);// Gets the values store in the object fract
+
+	n = n*den - num*d;//changes the value stored in n(numerator)
+	d = den*d;//changes the value stored in d(denominator)
+}
+
+void Fraction::multiply(Fraction fract)
+{
+	int num, den;
+	fract.getValues(num, den);// Gets the values store in the object fract
+
+	n = n*num;//changes the value stored in n(numerator)
+	d = d*den;//changes the value stored in d(denominator)
+}
+void Fraction::divide(Fraction fract)
+{
+	int num, den;
+	fract.getValues(num, den);// Gets the values store in the object fract
+
+	n = n*den;//changes the value stored in n(numerator)
+	d = d*num;//changes the value stored in d(denominator)
+}
 //deconstructor
 Fraction::Fraction()
 {
 
 }
+
 int main()
 {
-	Fraction frac;
+	Fraction obj1,obj2; //creates objects of fraction
+
+	//
 	
 }
