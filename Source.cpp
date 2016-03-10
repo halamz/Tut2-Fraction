@@ -22,10 +22,19 @@ public:
 	Fraction divide(Fraction);
 	void setValues(int num, int den); //to set n = num and d= den
 	void getValues(int &num, int &den); //to get n and d
+
+	//Overloading the +, -, *, / operators
+	Fraction operator + (Fraction);
+	Fraction operator - (Fraction);
+	Fraction operator * (Fraction);
+	Fraction operator / (Fraction);
+
 	void print();
 	~Fraction();
 
 };
+
+
 //constructor
 Fraction::Fraction()
 {
@@ -43,7 +52,7 @@ void Fraction::getValues(int &num, int &den)
 	num = n;
 	den = d;
 }
-
+/*
 Fraction Fraction::add(Fraction fract)
 {
 	int num, den;
@@ -92,11 +101,65 @@ Fraction Fraction::divide(Fraction fract)
 
 	return TempFrac;
 }
+*/
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//Overloading 
+Fraction Fraction::operator + (Fraction fract)
+{
+	int num, den;
+	fract.getValues(num, den);// Gets the values store in the object fract
+	Fraction TempFrac;
+	num = n*den + num*d; //changes the value stored in n(numerator)
+	den = den*d; //changes the value stored in d(denominator)
+
+	TempFrac.setValues(num, den);
+
+	return TempFrac;
+}
+
+Fraction Fraction::operator - (Fraction fract)
+{
+	int num, den;
+	fract.getValues(num, den);// Gets the values store in the object fract
+	Fraction TempFrac;
+	num = n*den - num*d;//changes the value stored in n(numerator)
+	den = den*d;//changes the value stored in d(denominator)
+
+	TempFrac.setValues(num, den);
+
+	return TempFrac;
+}
+
+Fraction Fraction::operator * (Fraction fract)
+{
+	int num, den;
+	fract.getValues(num, den);// Gets the values store in the object fract
+	Fraction TempFrac;
+	num = n*num;//changes the value stored in n(numerator)
+	den = d*den;//changes the value stored in d(denominator)
+	TempFrac.setValues(num, den);
+
+	return TempFrac;
+}
+Fraction Fraction::operator / (Fraction fract)
+{
+	int num, den;
+	fract.getValues(num, den);// Gets the values store in the object fract
+	Fraction TempFrac;
+	num = n*den;//changes the value stored in n(numerator)
+	den = d*num;//changes the value stored in d(denominator)
+	TempFrac.setValues(num, den);
+
+	return TempFrac;
+}
 
 void Fraction::print()
 {
 	cout << n << "/" << d << endl;
 }
+
+
+
 //deconstructor
 Fraction::~Fraction()
 {
@@ -110,7 +173,7 @@ int main()
 	obj2.setValues(1, 4);
 
 	//Testing
-	obj3 =obj1.add(obj2);
+	/*obj3 =obj1.add(obj2);
 	obj3.print();
 
 	obj3 = obj1.subtract(obj2);
@@ -120,6 +183,19 @@ int main()
 	obj3.print();
 
 	obj3 = obj1.divide(obj2);
+	obj3.print();
+	*/
+	//overloading Testing
+	obj3 =obj1 + obj2;
+	obj3.print();
+
+	obj3 = obj1 - obj2;
+	obj3.print();
+
+	obj3 =obj1 * obj2;
+	obj3.print();
+
+	obj3 = obj1 / obj2;
 	obj3.print();
 
 	//
