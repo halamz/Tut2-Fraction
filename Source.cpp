@@ -6,8 +6,8 @@ using namespace std;
 class Fraction
 {
 private:
-	double x = 0.00;
-	double y = 0.00;
+	double x ;
+	double y ;
 public:
 	double GetFractions(double num) //Gets numerator and denominator from user and convert into a decimal number and return it
 	{
