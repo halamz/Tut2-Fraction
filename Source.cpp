@@ -16,13 +16,12 @@ private:
 public:
 	//declarations
 	Fraction();
-	Fraction add(Fraction);
+/*	Fraction add(Fraction);
 	Fraction subtract(Fraction);
 	Fraction multiply(Fraction);
-	Fraction divide(Fraction);
+	Fraction divide(Fraction);        */
 	void setValues(int num, int den); //to set n = num and d= den
 	void getValues(int &num, int &den); //to get n and d
-
 	//Overloading the +, -, *, / operators
 	Fraction operator + (Fraction);
 	Fraction operator - (Fraction);
@@ -146,8 +145,8 @@ Fraction Fraction::operator / (Fraction fract)
 	int num, den;
 	fract.getValues(num, den);// Gets the values store in the object fract
 	Fraction TempFrac;
-	num = n*den;//changes the value stored in n(numerator)
-	den = d*num;//changes the value stored in d(denominator)
+	num = num*d;//changes the value stored in n(numerator)
+	den = den*n;//changes the value stored in d(denominator)
 	TempFrac.setValues(num, den);
 
 	return TempFrac;
@@ -169,8 +168,8 @@ Fraction::~Fraction()
 int main()
 {
 	Fraction obj1,obj2,obj3; //creates objects of fraction
-	obj1.setValues(1, 2);
-	obj2.setValues(1, 4);
+	obj1.setValues(1, 5);
+	obj2.setValues(1, 2);
 
 	//Testing
 	/*obj3 =obj1.add(obj2);
