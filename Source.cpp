@@ -20,6 +20,8 @@ public:
 	void subtract(Fraction);
 	void multiply(Fraction);
 	void divide(Fraction);
+	void setValues(int num,int den); //to set n = num and d= den
+	void getValues(int &num, int &den); //to get n and d
 	~Fraction();
 
 };
@@ -28,6 +30,19 @@ Fraction::Fraction()
 {
 
 }
+
+void Fraction::setValues(int num, int den)
+{
+	n = num;
+	d = den;
+}
+
+void Fraction::getValues(int &num, int &den)
+{
+	num = n;
+	den = d;
+}
+
 
 //deconstructor
 Fraction::Fraction()
