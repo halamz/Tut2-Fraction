@@ -154,7 +154,43 @@ Fraction Fraction::operator / (Fraction fract)
 
 void Fraction::print()
 {
-	cout << n << "/" << d << endl;
+	if (n%d == 0)
+	{
+		cout << n / d << endl;
+	}
+	else if (n > d) // mixed number
+	{
+		int common = 1, j = 0;
+		
+		while (j < d)
+		{
+			j++;
+			if (n%j == 0 && d%j == 0)
+			{
+				common = j;
+			}
+		}
+	
+		cout << n/d << " " << n-(n/d)*d << "/" << d << endl;
+	}
+	else
+	{
+		int common = 1, j = 0;
+
+		while (j < n)
+		{
+			j++;
+			if (n%j == 0 && d%j == 0)
+			{
+				common = j;
+			}
+		}
+
+		n = n / common;
+		d = d / common;
+		cout << n << "/" << d << endl;
+	}
+
 }
 
 
